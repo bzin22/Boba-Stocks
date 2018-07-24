@@ -1,18 +1,35 @@
 public class market extends data{
 	// variables
-	double popularity;
-	double exchangeRate;
-	ArrayList<Integer> store_value;
-	ArrayList<String> stock_list;
+	String marketName; //unique market name
+	ArrayList<stock> stockList; //list of all possible stocks
+	HashMap<String,int[]> stockInfo; //key = name of stocks. value = integer array. 0 = number available
+	//cont. 1 = price of stock
+
 	// functions
 	public market() {
-		store_value = new ArrayList<Integer>();
-		stock_list = new ArrayList<String>();
-		stock_list.add("gDumps");
-		store_value.add(50);
-		popularity = Math.random()*7;
-		exchangeRate = Math.random();
+		stockList = new ArrayList<stock>();
+		stockInfo = new HashMap<String,int[]>(); 
 	}
-	void setExchangeRate(double er){exchangeRate = er;}; // code pulls the exchange rate from server
-	double getExchangeRate(){return exchangeRate;};
+
+	//get market name
+	String getName() {return marketName;}
+	//set market name
+	void setName(String name) {marketName = name;}
+
+	//get entire stockList
+	ArrayList<stock> getAllListing(){return stockList;}
+
+	//get element of stockList
+	stock getStock(int index) {return stockList.get(index);}
+
+	//add stock to list
+	void addStock(stock myStock, int[] details) {
+		stockList.add(myStock);
+		stockInfo.put(myStock.getName(), details);
+	}
+	//remove stock from list
+	void removeStock(stock myStock) {
+		stockList.remove(myStock);
+		stockInfo.remove(myStock.getName());
+	}
 }
