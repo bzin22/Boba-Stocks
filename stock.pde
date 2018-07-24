@@ -22,9 +22,4 @@ public class stock {
 	//set quantity of stock on market
 	void setQuant(int num) {numOnMarket = num;}
 
-	//adjust stock prices
-	void calcPrice(){}
-
-	
-
 }
