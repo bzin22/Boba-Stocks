@@ -2,11 +2,15 @@ public class market{
 	// variables
 	String marketName; //unique market name
 	ArrayList<stock> stockList; //list of all possible stocks
-
+	int stockList_size = stockList.size(); // gives size of array list and should be updated every time a change is made to the list
 	// functions
 	public market() {
 		//initialze
 		stockList = new ArrayList<stock>();
+		stock green = new stock();
+		stock red = new stock();
+		stockList.add(green);
+		stockList.add(red);
 	}
 
 	//get market name
