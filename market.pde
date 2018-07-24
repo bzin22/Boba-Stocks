@@ -2,10 +2,17 @@ public class market extends data{
 	// variables
 	double popularity;
 	double exchangeRate;
-	String stock_list[] = {"eggs", "bread", "soda"};
-	int store_value[];
-	ArrayList<String> arraylist = new ArrayList<String>();
+	ArrayList<Integer> store_value;
+	ArrayList<String> stock_list;
 	// functions
-	double setExchanceRate(){return 5;}; // code pulls the exchange rate from server
-	double getExchangeRate(){return 5;};
+	public market() {
+		store_value = new ArrayList<Integer>();
+		stock_list = new ArrayList<String>();
+		stock_list.add("gDumps");
+		store_value.add(50);
+		popularity = Math.random()*7;
+		exchangeRate = Math.random();
+	}
+	void setExchangeRate(double er){exchangeRate = er;}; // code pulls the exchange rate from server
+	double getExchangeRate(){return exchangeRate;};
 }
